@@ -21,8 +21,8 @@ namespace CA2_2020
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> FirstName = new List<string>();
-        List<string> surName = new List<string>();
+        ObservableCollection<Employee> employee= new ObservableCollection<Employee>();
+        ObservableCollection<Employee> filteremployee= new ObservableCollection<Employee>();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,17 +30,15 @@ namespace CA2_2020
 
         private void ListBoxEmployeeBOX_Loaded(object sender, RoutedEventArgs e)
         {
-            //string[] names = { "Jane Jones PT", "Joe Murphy FT", "John Smith PT", "Jess Walsh FT" };
-            FirstName.Add("Jane");
-            FirstName.Add("Joe");
-            FirstName.Add("John");
-            FirstName.Add("Jess");
-            surName.Add("Jones");
-            surName.Add("Murphy");
-            surName.Add("Smith");
-            surName.Add("Walsh");
-            ListBoxEmployeeBOX.ItemsSource = FirstName;
-            ListBoxEmployeeBOX.ItemsSource = surName;
+            Employee e1= new PartTimeEmployee("Jane","Jones");
+            Employee e2 = new FullTimeEmployee("Joe","Murphy");
+            Employee e3 = new PartTimeEmployee("John", "Smith");
+            Employee e4 = new FullTimeEmployee("Jess", "Walsh");
+            employee.Add(e1);
+            employee.Add(e2);
+            employee.Add(e3);
+            employee.Add(e4);
+            ListBoxEmployeeBOX.ItemsSource = employee;
         }
 
         private void FirstNameTBX_GotFocus(object sender, RoutedEventArgs e)
@@ -50,10 +48,10 @@ namespace CA2_2020
 
         private void AddBTN_Click(object sender, RoutedEventArgs e)
         {
-            string newFirst = FirstNameTBX.Text;
-            string newSur = SurnameTBX.Text;
-            FirstName.Add(newFirst);
-            surName.Add(newSur);
+            string firstname = FirstNameTBX.Text;
+            string surname = SurnameTBX.Text;
+            //employee.Add(firstname);
+            //surName.Add(newSur);
         }
 
         private void ClearBTN_Click(object sender, RoutedEventArgs e)
