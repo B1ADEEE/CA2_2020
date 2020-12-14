@@ -23,12 +23,12 @@
         <Button x:Name="UpdateBTN" Content="Update" HorizontalAlignment="Left" Margin="665,184,0,0" VerticalAlignment="Top" Width="75" Click="UpdateBTN_Click"/>
         <Button x:Name="DeleteBTN" Content="Delete" HorizontalAlignment="Left" Margin="665,228,0,0" VerticalAlignment="Top" Width="75" Click="DeleteBTN_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="40,72,0,0" TextWrapping="Wrap" Text="EMPLOYEES" VerticalAlignment="Top"/>
-        <ListBox x:Name="ListBoxEmployeeBOX" HorizontalAlignment="Left" Height="294" Margin="40,99,0,0" VerticalAlignment="Top" Width="243" Loaded="ListBoxEmployeeBOX_Loaded"/>
+        <ListBox x:Name="ListBoxEmployeeBOX" HorizontalAlignment="Left" Height="294" Margin="40,99,0,0" VerticalAlignment="Top" Width="243" Loaded="ListBoxEmployeeBOX_Loaded" SelectionChanged="ListBoxEmployeeBOX_SelectionChanged"/>
         <TextBox x:Name="FirstNameTBX" HorizontalAlignment="Left" Height="16" Margin="419,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="FirstNameTBX_GotFocus"/>
-        <TextBox x:Name="SurnameTBX" HorizontalAlignment="Left" Height="16" Margin="419,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="SalaryTBX" HorizontalAlignment="Left" Height="16" Margin="419,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="HoursWorkedTBX" HorizontalAlignment="Left" Height="16" Margin="419,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="HourlyRateTBX" HorizontalAlignment="Left" Height="16" Margin="419,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SurnameTBX" HorizontalAlignment="Left" Height="16" Margin="419,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="SurnameTBX_GotFocus"/>
+        <TextBox x:Name="SalaryTBX" HorizontalAlignment="Left" Height="16" Margin="419,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="SalaryTBX_GotFocus"/>
+        <TextBox x:Name="HoursWorkedTBX" HorizontalAlignment="Left" Height="16" Margin="419,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="HoursWorkedTBX_GotFocus"/>
+        <TextBox x:Name="HourlyRateTBX" HorizontalAlignment="Left" Height="16" Margin="419,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="HourlyRateTBX_GotFocus"/>
 
     </Grid>
 </Window>

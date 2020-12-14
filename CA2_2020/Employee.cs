@@ -11,14 +11,16 @@ namespace CA2_2020
         //PROPERTIES
         protected string FirstName { get; set; }
         protected string SurName { get; set; }
-        public Employee(string firstname, string surname)
+        protected string JobLevel { get; set; }
+        public Employee(string firstname, string surname,string joblevel)
         {
             FirstName = firstname;
             SurName = surname;
+            JobLevel = joblevel; 
         }
        public override string ToString()
         {
-           return string.Format($"{SurName}, {FirstName}");
+           return string.Format($"{SurName.ToUpper()}, {FirstName} -- {JobLevel}");
         }
 
         //METHODS
@@ -28,7 +30,7 @@ namespace CA2_2020
     {
 
         public decimal Salary { get; set; }
-        public FullTimeEmployee(string firstname, string surname):base(firstname, surname)
+        public FullTimeEmployee(string firstname, string surname,string joblevel):base(firstname, surname,joblevel)
         {
         }
         public override decimal CalculateMonthlyPay()
@@ -41,7 +43,7 @@ namespace CA2_2020
     {
         public decimal HourlyRate { get; set; }
         public double HoursWorked { get; set; }
-        public PartTimeEmployee(string firstname,string surname):base(firstname,surname)
+        public PartTimeEmployee(string firstname,string surname,string joblevel):base(firstname,surname,joblevel)
         {
         }
         public override decimal CalculateMonthlyPay()

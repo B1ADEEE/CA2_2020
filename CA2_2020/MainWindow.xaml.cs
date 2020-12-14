@@ -30,10 +30,10 @@ namespace CA2_2020
 
         private void ListBoxEmployeeBOX_Loaded(object sender, RoutedEventArgs e)
         {
-            Employee e1= new PartTimeEmployee("Jane","Jones");
-            Employee e2 = new FullTimeEmployee("Joe","Murphy");
-            Employee e3 = new PartTimeEmployee("John", "Smith");
-            Employee e4 = new FullTimeEmployee("Jess", "Walsh");
+            Employee e1= new PartTimeEmployee("Jane","Jones","PartTime");
+            Employee e2 = new FullTimeEmployee("Joe","Murphy","FullTime");
+            Employee e3 = new PartTimeEmployee("John", "Smith","PartTime");
+            Employee e4 = new FullTimeEmployee("Jess", "Walsh","FullTime");
             employee.Add(e1);
             employee.Add(e2);
             employee.Add(e3);
@@ -50,8 +50,18 @@ namespace CA2_2020
         {
             string firstname = FirstNameTBX.Text;
             string surname = SurnameTBX.Text;
-            //employee.Add(firstname);
-            //surName.Add(newSur);
+            if (FullTimeRAD.IsChecked == true)
+            {
+                string joblevel = "FullTime";
+                Employee employees = new FullTimeEmployee(firstname, surname, joblevel);
+                employee.Add(employees);
+            }
+            else
+            {
+                string joblevel = "PartTime";
+                Employee employees = new FullTimeEmployee(firstname, surname, joblevel);
+                employee.Add(employees);
+            }
         }
 
         private void ClearBTN_Click(object sender, RoutedEventArgs e)
@@ -67,6 +77,35 @@ namespace CA2_2020
         private void DeleteBTN_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void SurnameTBX_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SurnameTBX.Clear();
+        }
+
+        private void SalaryTBX_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SurnameTBX.Clear();
+        }
+
+        private void HoursWorkedTBX_GotFocus(object sender, RoutedEventArgs e)
+        {
+            HoursWorkedTBX.Clear();
+        }
+
+        private void HourlyRateTBX_GotFocus(object sender, RoutedEventArgs e)
+        {
+            HourlyRateTBX.Clear();
+        }
+
+        private void ListBoxEmployeeBOX_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Employee SelectedEmployee = ListBoxEmployeeBOX.SelectedItem as Employee;
+            if(SelectedEmployee != null)
+            {
+               // FirstNameTBX.Text = SelectedEmployee.;
+            }
         }
     }
 }
