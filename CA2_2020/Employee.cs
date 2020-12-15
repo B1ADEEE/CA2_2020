@@ -9,9 +9,9 @@ namespace CA2_2020
     public abstract class Employee
     {
         //PROPERTIES
-        protected string FirstName { get; set; }
-        protected string SurName { get; set; }
-        protected string JobLevel { get; set; }
+        public string FirstName { get; set; }
+        public string SurName { get; set; }
+        public string JobLevel { get; set; }
         public Employee(string firstname, string surname,string joblevel)
         {
             FirstName = firstname;
@@ -30,8 +30,9 @@ namespace CA2_2020
     {
 
         public decimal Salary { get; set; }
-        public FullTimeEmployee(string firstname, string surname,string joblevel):base(firstname, surname,joblevel)
+        public FullTimeEmployee(string firstname, string surname,string joblevel,decimal salary):base(firstname, surname,joblevel)
         {
+            Salary = salary;
         }
         public override decimal CalculateMonthlyPay()
         {
@@ -43,8 +44,10 @@ namespace CA2_2020
     {
         public decimal HourlyRate { get; set; }
         public double HoursWorked { get; set; }
-        public PartTimeEmployee(string firstname,string surname,string joblevel):base(firstname,surname,joblevel)
+        public PartTimeEmployee(string firstname,string surname,string joblevel,decimal hourlyrate,double hoursworked):base(firstname,surname,joblevel)
         {
+            HourlyRate = hourlyrate;
+            HoursWorked = hoursworked;
         }
         public override decimal CalculateMonthlyPay()
         {

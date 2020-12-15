@@ -30,10 +30,10 @@ namespace CA2_2020
 
         private void ListBoxEmployeeBOX_Loaded(object sender, RoutedEventArgs e)
         {
-            Employee e1= new PartTimeEmployee("Jane","Jones","PartTime");
-            Employee e2 = new FullTimeEmployee("Joe","Murphy","FullTime");
-            Employee e3 = new PartTimeEmployee("John", "Smith","PartTime");
-            Employee e4 = new FullTimeEmployee("Jess", "Walsh","FullTime");
+            Employee e1= new PartTimeEmployee("Jane","Jones","PartTime",72,1);
+            Employee e2 = new FullTimeEmployee("Joe","Murphy","FullTime",54);
+            Employee e3 = new PartTimeEmployee("John", "Smith","PartTime",4,21);
+            Employee e4 = new FullTimeEmployee("Jess", "Walsh","FullTime",83);
             employee.Add(e1);
             employee.Add(e2);
             employee.Add(e3);
@@ -50,23 +50,36 @@ namespace CA2_2020
         {
             string firstname = FirstNameTBX.Text;
             string surname = SurnameTBX.Text;
+            string salery = SalaryTBX.Text;
+            string hoursworked = HoursWorkedTBX.Text;
+            string hourlyrate = HourlyRateTBX.Text;
             if (FullTimeRAD.IsChecked == true)
             {
                 string joblevel = "FullTime";
-                Employee employees = new FullTimeEmployee(firstname, surname, joblevel);
+                decimal salaryv1 = Convert.ToDecimal(salery);
+                Employee employees = new FullTimeEmployee(firstname, surname, joblevel,salaryv1);
                 employee.Add(employees);
             }
             else
             {
                 string joblevel = "PartTime";
-                Employee employees = new FullTimeEmployee(firstname, surname, joblevel);
+                decimal hoursworkedv1 = Convert.ToDecimal(hoursworked);
+                double hourlyratev1 = Convert.ToDouble(hourlyrate);
+                Employee employees = new PartTimeEmployee(firstname, surname, joblevel,hoursworkedv1,hourlyratev1);
                 employee.Add(employees);
             }
         }
 
         private void ClearBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            FirstNameTBX.Clear();
+            SurnameTBX.Clear();
+            FullTimeRAD.IsChecked = false;
+            PartTimeRAD.IsChecked = false;
+            SalaryTBX.Clear();
+            HourlyRateTBX.Clear();
+            HoursWorkedTBX.Clear();
+            MonthlyPayTBK.Text = "";
         }
 
         private void UpdateBTN_Click(object sender, RoutedEventArgs e)
@@ -76,7 +89,8 @@ namespace CA2_2020
 
         private void DeleteBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            Employee SelectedEmployee = ListBoxEmployeeBOX.SelectedItem as Employee;
+            employee.Remove(SelectedEmployee);
         }
 
         private void SurnameTBX_GotFocus(object sender, RoutedEventArgs e)
@@ -104,8 +118,30 @@ namespace CA2_2020
             Employee SelectedEmployee = ListBoxEmployeeBOX.SelectedItem as Employee;
             if(SelectedEmployee != null)
             {
-               // FirstNameTBX.Text = SelectedEmployee.;
+                FirstNameTBX.Text = SelectedEmployee.FirstName;
+                SurnameTBX.Text = SelectedEmployee.SurName;
+                if (SelectedEmployee.JobLevel == "FullTime")
+                {
+                    FullTimeRAD.IsChecked = true;
+                    //SalaryTBX.Text = SelectedEmployee.
+                    
+                }
+                else
+                {
+                    PartTimeRAD.IsChecked = true;
+                    
+                }
             }
+        }
+
+        private void FullTimeCHECK_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PartTimeCHECK_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
