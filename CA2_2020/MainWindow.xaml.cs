@@ -213,7 +213,7 @@ namespace CA2_2020
 
         private void FullTimeCHECK_Checked(object sender, RoutedEventArgs e)
         {
-            if (FullTimeCHECK.IsChecked == true)                                                                            //if the fulltime check boc is checked list only full time ppl
+            if (FullTimeCHECK.IsChecked == true)                                                                            //if the fulltime check box is checked list only full time people
             {   
                 ListBoxEmployeeBOX.ItemsSource = FullTimePeople;
             }
@@ -221,7 +221,7 @@ namespace CA2_2020
 
         private void PartTimeCHECK_Checked(object sender, RoutedEventArgs e)
         {
-            if (PartTimeCHECK.IsChecked == true)                                                                            //if the fulltime check boc is checked list only part time ppl
+            if (PartTimeCHECK.IsChecked == true)                                                                            //if the fulltime check box is checked list only part time people
             {
                 ListBoxEmployeeBOX.ItemsSource = PartTimePeople;
             }
@@ -229,7 +229,7 @@ namespace CA2_2020
 
         private void FullTimeCHECK_Unchecked(object sender, RoutedEventArgs e)
         {
-            if (FullTimeCHECK.IsChecked == false)                                                                           //if the fulltime check boc is checked list only Full time ppl
+            if (FullTimeCHECK.IsChecked == false)                                                                           //if the fulltime check box is unchecked list only employee people
             {
                 ListBoxEmployeeBOX.ItemsSource = employee;
             }
@@ -237,9 +237,9 @@ namespace CA2_2020
 
         private void PartTimeCHECK_Unchecked(object sender, RoutedEventArgs e)
         {
-            if(PartTimeCHECK.IsChecked == false)
+            if (PartTimeCHECK.IsChecked == false)                                                                           //if the fulltime check box is unchecked list only Full time people
             {
-                ListBoxEmployeeBOX.ItemsSource = employee;
+                ListBoxEmployeeBOX.ItemsSource = employee;                                                                  
             }
         }
     }
