@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <CheckBox x:Name="FullTimeCHECK" Content="Full Time" HorizontalAlignment="Left" Margin="40,43,0,0" VerticalAlignment="Top" Checked="FullTimeCHECK_Checked"/>
-        <CheckBox x:Name="PartTimeCHECK" Content="Part Time" HorizontalAlignment="Left" Margin="138,43,0,0" VerticalAlignment="Top" Checked="PartTimeCHECK_Checked"/>
+        <CheckBox x:Name="FullTimeCHECK" Content="Full Time" HorizontalAlignment="Left" Margin="40,43,0,0" VerticalAlignment="Top" Checked="FullTimeCHECK_Checked" Unchecked="FullTimeCHECK_Unchecked"/>
+        <CheckBox x:Name="PartTimeCHECK" Content="Part Time" HorizontalAlignment="Left" Margin="138,43,0,0" VerticalAlignment="Top" Checked="PartTimeCHECK_Checked" Unchecked="PartTimeCHECK_Unchecked"/>
         <TextBlock HorizontalAlignment="Left" Margin="323,85,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="323,130,0,0" TextWrapping="Wrap" Text="Surname:" VerticalAlignment="Top"/>
         <RadioButton x:Name="FullTimeRAD" Content="FT" HorizontalAlignment="Left" Margin="352,184,0,0" VerticalAlignment="Top"/>
